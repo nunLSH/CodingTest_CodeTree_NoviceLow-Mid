@@ -12,9 +12,10 @@ public class Main {
             if (i % 2 != 0)
                 sum += array[i];
 
-            if ((i+1) % 3 == 0)
+            if ((i+1) % 3 == 0){
                 sum_3 += array[i];
                 cnt++;
+            }
         }
         System.out.printf("%d %.1f", sum, (double)sum_3/cnt);
     }
