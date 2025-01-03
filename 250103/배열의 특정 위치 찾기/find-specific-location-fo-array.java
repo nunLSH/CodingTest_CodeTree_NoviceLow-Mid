@@ -4,7 +4,7 @@ public class Main {
         Scanner sc = new Scanner(System.in);
 
         int[] array = new int[10];
-        int sum = 0, sum_3 = 0;
+        int sum = 0, sum_3 = 0, cnt = 0;
 
         for (int i = 0; i < 10; i++){
             array[i] = sc.nextInt();
@@ -14,7 +14,8 @@ public class Main {
 
             if ((i+1) % 3 == 0)
                 sum_3 += array[i];
+                cnt++;
         }
-        System.out.printf("%d %.1f", sum, (double)sum_3/3);
+        System.out.printf("%d %.1f", sum, (double)sum_3/cnt);
     }
 }
