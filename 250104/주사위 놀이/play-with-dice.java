@@ -9,7 +9,6 @@ public class Main {
         for (int i = 0; i < 10; i++){
             array[i] = sc.nextInt();
             count[array[i]]++;
-            }
         }
 
         for (int i = 1; i <= 6; i++)
