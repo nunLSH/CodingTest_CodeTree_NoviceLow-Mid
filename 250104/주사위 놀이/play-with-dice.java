@@ -8,10 +8,7 @@ public class Main {
 
         for (int i = 0; i < 10; i++){
             array[i] = sc.nextInt();
-
-            for (int k = 1; k < 7; k++){
-                if (array[i] == k)
-                    count[k]++;
+            count[array[i]]++;
             }
         }
 
