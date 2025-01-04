@@ -9,12 +9,9 @@ public class Main {
         int[] rest = new int[b];
         int sum = 0;
 
-        for (int i = 0; i < 1000; i++){
+        while (a > 1){
             rest[a%b]++;
             a /= b;
-
-            if (a <= 1) 
-                break;
         }
 
         for (int i = 0; i < b; i++)
