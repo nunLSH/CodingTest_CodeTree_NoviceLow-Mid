@@ -10,8 +10,8 @@ public class Main {
         int sum = 0;
 
         for (int i = 0; i < 1000; i++){
-            a /= b;
             rest[a%b]++;
+            a /= b;
 
             if (a <= 1) 
                 break;
