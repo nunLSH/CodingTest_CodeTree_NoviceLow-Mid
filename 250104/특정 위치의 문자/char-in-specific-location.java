@@ -8,9 +8,10 @@ public class Main {
         int index = -1;
 
         for (int i = 0; i < array.length; i++){
-            if (array[i] == c)
+            if (array[i] == c) {
                 index = i;
                 break;
+            }
         }
 
         if (index == -1)
