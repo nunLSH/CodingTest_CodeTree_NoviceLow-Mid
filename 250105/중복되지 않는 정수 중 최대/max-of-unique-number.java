@@ -17,7 +17,7 @@ public class Main {
 
         for (int i = 0; i < 1000; i++){
             if (cnt[i] == 1) {
-                if (cnt[i] > max)
+                if (i > max)
                     max = i;
             }
         }
