@@ -47,6 +47,7 @@ public class Main {
                 for (int k = s-1; k < e; k++) {
                     System.out.print(array[k]+" ");
                 }
+                System.out.println();
             }
         }
     }
