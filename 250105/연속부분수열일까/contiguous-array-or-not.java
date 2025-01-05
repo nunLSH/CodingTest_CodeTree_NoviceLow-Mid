@@ -25,9 +25,10 @@ public class Main {
                 for (int k = index; k < index+n2; k++){
                     if (array1[k] == array2[k-index])
                         cnt++;
-                    else 
+                    else {
                         cnt = 0;
                         break;
+                    }
                 }
 
                 if (cnt == n2)
