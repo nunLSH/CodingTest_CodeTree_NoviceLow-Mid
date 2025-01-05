@@ -30,7 +30,11 @@ public class Main {
                         break;
                     }
                 }
-                break; 
+
+                if (cnt == n2)
+                    break;
+                else
+                    continue;
             }
         }
 
