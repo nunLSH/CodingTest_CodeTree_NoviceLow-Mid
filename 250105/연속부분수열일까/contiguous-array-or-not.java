@@ -18,7 +18,7 @@ public class Main {
         int[] new_array = new int[n2];
         int cnt = 0;
         
-        for (int i = 0; i < n1; i++){
+        for (int i = 0; i <= n1 - n2; i++){
             if (array1[i] == array2[0]) {
                 index = i;
 
