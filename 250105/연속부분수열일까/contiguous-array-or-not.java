@@ -16,23 +16,22 @@ public class Main {
 
         int index = 0;
         int[] new_array = new int[n2];
+        int cnt = 0;
         
         for (int i = 0; i < n1; i++){
-            if (array1[i] == array2[0] && array1[i+n2-1] == array2[n2-1]) {
-                index = i;
-                break;
-            }
-
             if (array1[i] == array2[0]) {
                 index = i;
-                break;
-            }
-        }
 
-        int cnt = 0;
-        for (int i = index; i < index+n2; i++){
-            if (array1[i] == array2[i-index])
-                cnt++;
+                for (int k = index; k < index+n2; k++){
+                    if (array1[k] == array2[k-index])
+                        cnt++;
+                    else {
+                        cnt = 0;
+                        break;
+                    }
+                }
+                break; 
+            }
         }
 
         if (cnt == n2)
