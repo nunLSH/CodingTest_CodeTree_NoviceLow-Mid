@@ -15,7 +15,6 @@ public class Main {
             array2[i] = sc.nextInt();
 
         int index = 0;
-        int[] new_array = new int[n2];
         int cnt = 0;
         
         for (int i = 0; i <= n1 - n2; i++){
