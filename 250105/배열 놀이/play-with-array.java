@@ -32,11 +32,8 @@ public class Main {
                         break;
                     }
                 }
-
-                if (index == -1)
-                    System.out.println("0");
-                else
-                    System.out.println(index+1);  
+                
+                System.out.println(index+1);  
             }
 
             // 3 s e
