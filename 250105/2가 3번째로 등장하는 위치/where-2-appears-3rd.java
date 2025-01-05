@@ -5,7 +5,7 @@ public class Main {
 
         int n = sc.nextInt();
         int[] array = new int[n];
-        int cnt = 0, index = 0;
+        int cnt = 0;
 
         for (int i = 0; i < n; i++){
             array[i] = sc.nextInt();
@@ -14,10 +14,9 @@ public class Main {
                 cnt++;
             
             if (cnt == 3) {
-                index = i;
+                System.out.print(i+1);
                 break;
             }
         }
-        System.out.print(index+1);
     }
 }
