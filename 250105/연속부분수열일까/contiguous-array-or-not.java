@@ -36,7 +36,7 @@ public class Main {
                 else
                     continue;
             } else
-                break;
+                continue;
         }
 
         if (cnt == n2)
