@@ -12,13 +12,13 @@ public class Main {
         int maxProfit = carPrice[1]-carPrice[0];
 
         for (int i = 0; i < n; i++){
-            for (int j = 1; j < n; j++){
+            for (int j = 0; j < n; j++){
                 if (j > i && (carPrice[j] - carPrice[i] > maxProfit)){
                     maxProfit = carPrice[j] - carPrice[i];
                 }
             }
         }
-        
+
         if (maxProfit <= 0)
             System.out.print(0);
         else
