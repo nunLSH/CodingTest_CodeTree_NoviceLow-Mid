@@ -23,13 +23,11 @@ public class Main {
         int s_max = min, l_min = max;
 
         for (int i = 0; i < 10; i++){
-            if (array[i] < 500){
-                if (array[i] > s_max)
-                    s_max = array[i];
-            } else if (array[i] > 500){
-                if (array[i] < l_min)
-                    l_min = array[i];
-            }
+            if (array[i] < 500 && array[i] > s_max)
+                s_max = array[i];
+            if (array[i] > 500 && array[i] < l_min)
+                l_min = array[i];
+            
         }
         System.out.printf("%d %d", s_max, l_min);
     }
