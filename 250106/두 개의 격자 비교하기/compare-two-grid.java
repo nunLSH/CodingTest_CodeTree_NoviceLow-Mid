@@ -21,12 +21,9 @@ public class Main {
         }
 
         for (int i = 0; i < n; i++){
-            for (int j = 0; j < m; j++){
-                if (arr1[i][j] == arr2[i][j])
-                    newArr[i][j] = 0;
-                else
-                    newArr[i][j] = 1;
-            }
+            for (int j = 0; j < m; j++)
+                newArr[i][j] = (arr1[i][j] == arr2[i][j]) ? 0 : 1;
+            
         }
 
         for (int i = 0; i < n; i++){
