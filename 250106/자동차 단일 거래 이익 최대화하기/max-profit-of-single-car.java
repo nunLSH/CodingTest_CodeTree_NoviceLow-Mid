@@ -18,10 +18,6 @@ public class Main {
                 }
             }
         }
-
-        if (maxProfit <= 0)
-            System.out.print(0);
-        else
-            System.out.print(maxProfit);
+        System.out.print(maxProfit);
     }
 }
