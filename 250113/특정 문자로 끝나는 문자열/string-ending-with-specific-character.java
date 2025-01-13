@@ -9,16 +9,16 @@ public class Main {
             arr[i] = sc.next();
         }
         char c = sc.next().charAt(0);
-        String s = "None";
+        int cnt = 0;
 
         for (int i = 0; i < 10; i++){
             int len = arr[i].length();
             if (arr[i].charAt(len-1) == c) {
-                s = arr[i];
                 System.out.println(s);
+                cnt++;
             }
         }
-        if (s.equals("None"))
-            System.out.print(s);
+        if (cnt == 0)
+            System.out.print("None");
     }
 }
