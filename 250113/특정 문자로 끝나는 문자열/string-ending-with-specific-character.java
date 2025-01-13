@@ -14,7 +14,7 @@ public class Main {
         for (int i = 0; i < 10; i++){
             int len = arr[i].length();
             if (arr[i].charAt(len-1) == c) {
-                System.out.println(s);
+                System.out.println(arr[i]);
                 cnt++;
             }
         }
