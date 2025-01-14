@@ -12,11 +12,8 @@ public class Main {
         for (int i = 0; i < s.length(); i++){
             if (arr[i] == c1){
                 arr[i] = c2;
-                continue;
-            }
-            if (arr[i] == c2){
+            } else if (arr[i] == c2){
                 arr[i] = c1;
-                continue;
             }
         }
         System.out.print(String.valueOf(arr));
