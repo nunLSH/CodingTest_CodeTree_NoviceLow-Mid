@@ -5,57 +5,25 @@ public class Main {
 
         String str = sc.nextLine();
         int len = str.length();
-        char[] charArr = new char[1000];
-        int[] num = new int[1000];
-        int cnt = 1, start = 1;
 
-        for (int i = 0; i < 1000; i++){
-            if (len == 1){
-                charArr[i] = str.charAt(0);
-                num[i] = cnt;
-                start += num[i];
-                break;
-            }
-            if (start == len)
-                break;
+        String encoded = "";
+        char curChar = str.charAt(0);
+        int num = 1;
+
+        for (int i = 1; i < len; i++){
+            if(str.charAt(i) == curChar)
+                num++;
             else {
-                for (int j = start; j < len; j++){
-                    if (str.charAt(j-1) == str.charAt(j)){
-                        if (j == len-1) {
-                            cnt++;
-                            charArr[i] = str.charAt(j-1);
-                            num[i] = cnt;
-                            start += num[i];
-                            break;
-                        } else {
-                            cnt++;
-                        }
-                    } else {
-                        charArr[i] = str.charAt(j-1);
-                        num[i] = cnt;
-                        start += num[i];
-                        cnt = 1;
-
-                        if (j == len-1 || j == len) {
-                            charArr[i+1] = str.charAt(j);
-                            num[i+1] = cnt;
-                            start += num[i+1];
-                        }
-                        break;
-                    }
-                }
+                encoded += curChar;
+                encoded += num;
+                curChar = str.charAt(i);
+                num = 1;
             }
         } 
-    
-        String result = "";
-        for (int i = 0; i < 1000; i++){
-            if (num[i] != 0) {
-                result += charArr[i];
-                result += num[i];
-            } else 
-                break;
-        }
-        System.out.println(result.length());
-        System.out.println(result);
+        encoded += curChar;
+        encoded += num;
+
+        System.out.println(encoded.length());
+        System.out.println(encoded);
     }
 }
