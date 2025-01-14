@@ -4,21 +4,13 @@ public class Main {
         Scanner sc = new Scanner(System.in);
 
         String str = sc.nextLine();
-        boolean exists1 = false;
-        boolean exists2 = false;
-
-        if (str.contains("ee"))
-            exists1 = true;
-
-        if (str.contains("ab"))
-            exists2 = true;
         
-        if (exists1 == true)
+        if (str.contains("ee"))
             System.out.print("Yes ");
         else 
             System.out.print("No ");
 
-        if (exists2 == true)
+        if (str.contains("ab"))
             System.out.print("Yes ");
         else 
             System.out.print("No ");
