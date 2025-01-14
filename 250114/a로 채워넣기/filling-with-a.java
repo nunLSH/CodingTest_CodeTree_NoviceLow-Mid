@@ -7,7 +7,7 @@ public class Main {
         int len = s.length();
         String newStr = "";
 
-        newStr = s.substring(0,1)+"a"+s.substring(2,len-2)+"a"+s.substring(len-1, len);
+        newStr = s.substring(0,1)+"a"+s.substring(2,len-2)+"a"+s.substring(len-1);
         System.out.print(newStr);
     }
 }
