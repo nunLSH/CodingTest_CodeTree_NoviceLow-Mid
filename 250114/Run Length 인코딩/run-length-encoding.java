@@ -10,6 +10,12 @@ public class Main {
         int cnt = 1, start = 1;
 
         for (int i = 0; i < 1000; i++){
+            if (len == 1){
+                charArr[i] = str.charAt(0);
+                num[i] = cnt;
+                start += num[i];
+                break;
+            }
             if (start == len)
                 break;
             else {
@@ -30,7 +36,7 @@ public class Main {
                         start += num[i];
                         cnt = 1;
 
-                        if (j == len -1) {
+                        if (j == len-1 || j == len) {
                             charArr[i+1] = str.charAt(j);
                             num[i+1] = cnt;
                             start += num[i+1];
@@ -39,8 +45,8 @@ public class Main {
                     }
                 }
             }
-        }
-        
+        } 
+    
         String result = "";
         for (int i = 0; i < 1000; i++){
             if (num[i] != 0) {
