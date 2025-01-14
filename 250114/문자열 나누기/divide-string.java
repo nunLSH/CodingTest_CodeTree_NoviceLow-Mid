@@ -14,7 +14,7 @@ public class Main {
 
         int cnt = 0;
         for (int i = 0; i < s.length(); i++){
-            if ((i+1) % 5 == 0)
+            if (i % 5 == 0 && i != 0)
                 System.out.println();
             System.out.print(s.charAt(i));
         }
