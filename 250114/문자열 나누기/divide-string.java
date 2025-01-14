@@ -14,10 +14,9 @@ public class Main {
 
         int cnt = 0;
         for (int i = 0; i < s.length(); i++){
-            if (cnt % 5 == 0 && cnt != 0)
+            if ((i+1) % 5 == 0)
                 System.out.println();
             System.out.print(s.charAt(i));
-            cnt++;
         }
     }
 }
