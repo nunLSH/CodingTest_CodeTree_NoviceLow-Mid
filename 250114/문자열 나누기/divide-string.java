@@ -12,7 +12,6 @@ public class Main {
             s += str[i];
         }
 
-        int cnt = 0;
         for (int i = 0; i < s.length(); i++){
             if (i % 5 == 0 && i != 0)
                 System.out.println();
