@@ -11,7 +11,7 @@ public class Main {
 
       
             if (n >= len)
-                a = len -1;
+                n = len -1;
 
             str = str.substring(0, n)+str.substring(n+1);
             len--;
