@@ -7,14 +7,14 @@ public class Main {
         int q = sc.nextInt();
         char[] arr = str.toCharArray();
 
-        for (int i = 0; i < q; i++){
+        for (int i = 1; i <= q; i++){
             int q_num = sc.nextInt();
 
             if (q_num == 1){
                 int a = sc.nextInt();
                 int b = sc.nextInt();
 
-                char temp = str.charAt(a-1);
+                char temp = arr[a-1];
 
                 arr[a-1] = arr[b-1];
                 arr[b-1] = temp;
