@@ -6,7 +6,7 @@ public class Main {
         String s = sc.next();
         int len = s.length();
         int q = sc.nextInt();
-        String str = s;
+        String str = "";
 
         for (int i = 0; i < q; i++){
             int num = sc.nextInt();
@@ -16,10 +16,11 @@ public class Main {
             } else if (num == 2){
                 s = s.substring(len-1)+s.substring(0,len-1);
             } else {
-                s = "";
                 for (int j = len-1; j >= 0; j--){
-                    s += str.charAt(j);
+                    str += s.charAt(j);
                 }
+                s = str;
+                str = "";
             }
             System.out.println(s);
         }
