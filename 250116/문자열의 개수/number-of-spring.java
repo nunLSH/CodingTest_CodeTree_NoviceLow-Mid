@@ -14,7 +14,7 @@ public class Main {
         }
 
         System.out.println(cnt);
-        for (int i = 0; i < cnt; i += 2){
+        for (int i = 1; i < cnt+1; i += 2){
             System.out.println(arr[i]);
         }
     }
