@@ -8,7 +8,7 @@ public class Main {
         for (int i = 1; i < 201; i++) {
             arr[i] = sc.next();
 
-            if (s.equals("0")) 
+            if (arr[i].equals("0")) 
                 break;
             cnt++;
         }
