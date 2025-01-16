@@ -9,10 +9,7 @@ public class Main {
 
         for (int i = 0; i < s.length(); i++){
             if (s.charAt(i) >= '0' && s.charAt(i) <= '9')
-                str += s.charAt(i);
-        }
-        for (int i = 0; i < str.length(); i++){
-            sum += (str.charAt(i) - '0');
+                sum += (s.charAt(i) - '0');
         }
         System.out.print(sum);
     }
