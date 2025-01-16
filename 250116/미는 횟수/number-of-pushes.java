@@ -16,7 +16,7 @@ public class Main {
                 break;
         }
         
-        if (cnt == 0)
+        if (cnt == len)
             System.out.print(-1);
         else
             System.out.print(cnt);
