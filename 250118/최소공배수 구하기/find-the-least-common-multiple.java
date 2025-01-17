@@ -2,14 +2,12 @@ import java.util.Scanner;
 public class Main {
 
     public static void findLcm(int n, int m){
-        int lcm = 0;
-        for (int i = 1; i < 100; i++){
-            if ((n * i) % m == 0){
-                lcm = n * i;
-                break;
-            }
+        int gcd = 0;
+        for (int i = 1; i < Math.min(n,m); i++){
+            if (n % i == 0 && m % i == 0)
+                gcd = i;
         }
-        System.out.print(lcm);
+        System.out.print(n * m / gcd);
     }
 
     public static void main(String[] args) {
