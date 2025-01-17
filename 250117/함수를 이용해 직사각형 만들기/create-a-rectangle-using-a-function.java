@@ -15,6 +15,6 @@ public class Main {
         int n = sc.nextInt();
         int m = sc.nextInt();
 
-        printStars(n, m);
+        print1(n, m);
     }
 }
