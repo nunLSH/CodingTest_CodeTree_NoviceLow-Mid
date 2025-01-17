@@ -1,7 +1,7 @@
 import java.util.Scanner;
 public class Main {
 
-    public static void printStars(int n, int m){
+    public static void print1(int n, int m){
         for (int i = 0; i < n; i++){
             for (int j = 0; j < m; j++)
                 System.out.print("1");
