@@ -7,10 +7,7 @@ public class Main {
     }
 
     public static void main(String[] args) {
-        print10Stars();
-        print10Stars();
-        print10Stars();
-        print10Stars();
-        print10Stars();
+        for (int i = 0; i < 5; i++)
+            print10Stars();
     }
 }
