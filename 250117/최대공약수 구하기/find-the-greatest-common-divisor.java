@@ -1,13 +1,13 @@
 import java.util.Scanner;
 public class Main {
-    public static void maxCommonDivisor(int n, int m){
-        int maxCommonDivisor = 0;
+    public static void findGcd(int n, int m){
+        int gcd = 0;
         for (int i = 1; i <= 100; i++){
             if (n % i == 0 && m % i == 0){
-                maxCommonDivisor = i;
+                gcd = i;
             }
         }
-        System.out.print(maxCommonDivisor);
+        System.out.print(gcd);
     }
 
     public static void main(String[] args) {
@@ -16,6 +16,6 @@ public class Main {
         int n = sc.nextInt();
         int m = sc.nextInt();
 
-        maxCommonDivisor(n, m);
+        findGcd(n, m);
     }
 }
