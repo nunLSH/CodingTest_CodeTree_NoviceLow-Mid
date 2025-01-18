@@ -3,9 +3,9 @@ public class Main {
     public static int findMin(int a, int b, int c){
         int min = 0;
 
-        if (a => b && c => b )
+        if (a >= b && c >= b )
             min = b;
-        else if (a => c && b => c)
+        else if (a >= c && b >= c)
             min = c;
         else 
             min = a;
