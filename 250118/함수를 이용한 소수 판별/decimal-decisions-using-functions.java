@@ -1,23 +1,16 @@
 import java.util.Scanner;
 public class Main {
-    public static int primeSum(int a, int b){
-        int sum = 0;
+    public static int isPrime(int n){
 
-        for (int i = a; i <= b; i++){
-            boolean isPrime = true;
-
-            if (i == 1)
-                isPrime = false;
+            if (n == 1)
+                return false;
                 
-            for (int k = 2; k < i; k++){
-                if (i % k == 0)
-                    isPrime = false;
+            for (int k = 2; k < n; k++){
+                if (n % k == 0)
+                    return false;
             }
-            if (isPrime == true)
-                sum += i;
-        }
 
-        return sum;
+        return true;
     }
 
     public static void main(String[] args) {
@@ -26,6 +19,12 @@ public class Main {
         int a = sc.nextInt();
         int b = sc.nextInt();
 
-        System.out.print(primeSum(a, b));
+        int sum = 0;
+
+        for (int i = a; i <= b; i++){
+            if (isPrime(i))
+                sum += i;
+        }
+        System.out.print(sum);
     }
 }
