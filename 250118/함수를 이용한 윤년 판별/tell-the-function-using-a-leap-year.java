@@ -1,9 +1,9 @@
 import java.util.Scanner;
 public class Main {
-    public static boolean isLeapYear(int n){
-        if (n % 4 != 0)
+    public static boolean isLeapYear(int year){
+        if (year % 4 != 0)
             return false;
-        if (n % 100 == 0 && n % 400 != 0)
+        if (year % 100 == 0 && year % 400 != 0)
             return false;
 
         return true;
