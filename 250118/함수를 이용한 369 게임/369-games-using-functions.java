@@ -1,12 +1,14 @@
 import java.util.Scanner;
 public class Main {
-    public static boolean is369In(int i){
+    public static boolean is369In(int n){
         boolean b = false;
 
-        if (i % 10 == 3 || i % 10 == 6 || i % 10 == 9)
-            b = true;
-        if (i >= 30 && i < 40 || i >= 60 && i < 70 || i >= 90 && i < 100)
-            b = true;
+        char[] arr = Integer.toString(n).toCharArray();
+
+        for (int i = 0; i < arr.length; i++){
+            if (arr[i] == '3' || arr[i] == '6' || arr[i] == '9')
+                b = true;
+        }
         
         return b;
     }
