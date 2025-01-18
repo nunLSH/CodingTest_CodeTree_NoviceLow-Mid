@@ -1,14 +1,12 @@
 import java.util.Scanner;
 public class Main {
     public static int findMin(int a, int b, int c){
-        int min = 0;
+        int min = a;
 
-        if (a >= b && c >= b )
+        if (min > b)
             min = b;
-        else if (a >= c && b >= c)
+        if (min > c)
             min = c;
-        else 
-            min = a;
 
         return min;
     }
