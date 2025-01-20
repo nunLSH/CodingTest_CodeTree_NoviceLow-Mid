@@ -11,7 +11,7 @@ public class Main {
         else if (o == '/')
             return a / c;
         else
-            return -1;
+            return 20000;
     }
 
     public static void main(String[] args) {
@@ -21,9 +21,9 @@ public class Main {
         char o = sc.next().charAt(0);
         int c = sc.nextInt();
 
-        if (calculate(a, o, c) == -1)
+        if (calculate(a, o, c) == 20000)
             System.out.print("False");
         else
-            System.out.print(Integer.toString(a) + " " + o + " " + Integer.toString(c) + " = " +calculate(a, o, c));
+            System.out.print(Integer.toString(a) + " " + o + " " + Integer.toString(c) + " = " + calculate(a, o, c));
     }
 }
