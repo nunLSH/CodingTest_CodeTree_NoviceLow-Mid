@@ -3,6 +3,9 @@ public class Main {
     public static String isDateExists(int m, int d){
         if (m > 12 || d > 31)
             return "No";
+
+        if (m == 2 && d <= 28)
+            return "Yes";
         
         if ((m < 8 && m % 2 != 0) || (m >= 8 && m % 2 == 0 )){
             if (d <= 31)
