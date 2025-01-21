@@ -17,12 +17,12 @@ public class Main {
 
         for (int i = 0; i < n1; i++){
             int a = sc.nextInt();
-            s1 += Integer.toString(a);
+            s1 += Integer.toString(a)+" ";
         }
 
         for (int i = 0; i < n2; i++){
             int b = sc.nextInt();
-            s2 += Integer.toString(b);
+            s2 += Integer.toString(b)+" ";
         }
 
         System.out.print(isSubsequence(s1, s2));
