@@ -4,89 +4,29 @@ public class Main {
     public static boolean isLeapYear(int year){
         if (year % 4 != 0)
             return false;
-        if (year % 100 == 0 && year % 400 != 0)
-            return false;
+        if (year % 100 != 0)
+            return true;
+        if (year % 400 == 0)
+            return true;
 
-        return true;
+        return false;
     }
 
-    public static String leapYearSeason(int m, int d){
-        if (m == 2){
-                if (d <= 29)
-                    return "Winter";
-            } else if (m == 1 || m == 12){
-                if (d <= 31)
-                    return "Winter";
-            } else if (2 < m && m < 6){
-                if (m == 4){
-                    if (d < 31)
-                        return "Spring";
-                } else {
-                    if (d <= 31)
-                        return "Spring";
-                }
-            } else if (5 < m && m < 9) {
-                if (m == 6){
-                    if (d < 31)
-                        return "Summer";
-                } else {
-                    if (d <= 31)
-                        return "Summer";
-                }
-            } else {
-                if (m == 10){
-                    if (d <= 31)
-                        return "Fall";
-                } else {
-                    if (d < 31)
-                        return "Fall";
-                }
-            }
-        return "-1";
-    }
+    public static String whatSeason(int y, int m, int d){
 
-    public static String whatSeason(int m, int d){
-        if (m == 2){
-                if (d < 29)
-                    return "Winter";
-            } else if (m == 1 || m == 12){
-                if (d <= 31)
-                    return "Winter";
-            } else if (2 < m && m < 6){
-                if (m == 4){
-                    if (d < 31)
-                        return "Spring";
-                } else {
-                    if (d <= 31)
-                        return "Spring";
-                }
-            } else if (5 < m && m < 9) {
-                if (m == 6){
-                    if (d < 31)
-                        return "Summer";
-                } else {
-                    if (d <= 31)
-                        return "Summer";
-                }
-            } else {
-                if (m == 10){
-                    if (d <= 31)
-                        return "Fall";
-                } else {
-                    if (d < 31)
-                        return "Fall";
-                }
-            }
-        return "-1";
-    }
+        int[] numOfDays = new int[]{0, 31, 0, 31, 30, 31, 30, 31, 31, 30, 31, 30, 31};
 
-    public static String isExists(int y, int m, int d){
-        if (isLeapYear(y) == true){
-            return leapYearSeason(m, d);
-        }
-
-        if (isLeapYear(y) == false){
-            return whatSeason(m, d);
+        numOfDays[2] = isLeapYear(y) ? 29 : 28;
+        
+        if (d <= numOfDays[m]){
+            if (m == 12 || m > 0 && m < 3)
+                return "Winter";
+            else if (2 < m && m < 6)
+                return "Spring";
+            else if (5 < m && m < 9)
+                return "Summer";
+            else
+                return "Fall";
         }
 
         return "-1";
@@ -99,6 +39,6 @@ public class Main {
         int m = sc.nextInt();
         int d = sc.nextInt();
 
-        System.out.print(isExists(y, m, d));
+        System.out.print(whatSeason(y, m, d));
     }
 }
