@@ -2,17 +2,18 @@ import java.util.Scanner;
 public class Main {
     public static String isSubsequence(int[] arr1, int[] arr2){
         int len = arr2.length;
-        int[] newArr = new int[len];
+        int startIndex = 0;
+        
         for (int i = 0; i < arr1.length-len+1; i++){
-            for (int j = 0; j < len; j++){
-                newArr[j] = arr1[i+j];
-            }
+            if (arr1[i] == arr2[0])
+                startIndex = i;
 
             int cnt = 0;
-            for (int k = 0; k < len; k++){
-                if (newArr[k] == arr2[k])
+            for (int j = 0; j < len; j++){
+                if (arr1[j+startIndex] == arr2[j])
                     cnt++;
             }
+
             if (cnt == len)
                 return "Yes";
         }
