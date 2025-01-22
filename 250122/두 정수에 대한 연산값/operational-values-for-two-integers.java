@@ -12,11 +12,11 @@ public class Main {
         int num1 = n.value, num2 = m.value;
 
         if (num1 > num2) {
-            n.value = n.value + 25;
-            m.value = 2 * m.value;
+            n.value += 25;
+            m.value *= 2;
         } else {
-            m.value = m.value + 25;
-            n.value = 2 * n.value;
+            m.value += 25;
+            n.value *= 2 ;
         }
     }
 
