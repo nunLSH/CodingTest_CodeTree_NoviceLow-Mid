@@ -1,6 +1,7 @@
 import java.util.Scanner;
 public class Main {
-    static String s = "", str = "";
+    static String s, str;
+    
     public static int isContain() {
         if (s.contains(str))
             return s.indexOf(str);
