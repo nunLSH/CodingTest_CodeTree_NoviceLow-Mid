@@ -9,7 +9,7 @@ public class Main {
     public static int isContain() {
         int startIndex = 0;
 
-        for (int i = 0; i < s.length(); i++){
+        for (int i = 0; i <= s.length()-str.length(); i++){
             if (s.charAt(i) == str.charAt(0)){
                 startIndex = i;
                 int cnt = 0;
