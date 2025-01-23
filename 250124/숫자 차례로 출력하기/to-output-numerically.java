@@ -1,25 +1,19 @@
 import java.util.Scanner;
 public class Main {
     public static void printNum1(int n) {
-        int cnt = 0;
-        if (cnt == 7)
+        if (n == 0)
             return;
 
-        for (int i = 1; i <= n; i++){
-            System.out.print(i+" ");
-            cnt++;
-        }
+        printNum1(n-1);
+        System.out.print(n+" ");
     }
 
     public static void printNum2(int n) {
-        int cnt = 0;
-        if (cnt == 7)
+        if (n == 0)
             return;
 
-        for (int i = n; i >= 1; i--){
-            System.out.print(i+" ");
-            cnt++;
-        }
+        System.out.print(n+" ");
+        printNum2(n-1);
     }
 
     public static void main(String[] args) {
