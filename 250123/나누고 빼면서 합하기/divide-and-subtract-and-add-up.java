@@ -1,17 +1,18 @@
 import java.util.Scanner;
 
 public class Main {
-    public static int n, m, sum = 0;
+    public static int n, m;
     public static int[] arr = new int[100];
 
     public static int sum() {
-        while (m != 0) {
+        int sum = 0;
+        while (m > 0) {
             sum += arr[m-1];
 
             if (m % 2 == 0)
                 m /= 2;
             else 
-                m -= 1;
+                m--;
         }
         return sum;
     }
