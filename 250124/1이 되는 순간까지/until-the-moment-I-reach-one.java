@@ -5,7 +5,7 @@ public class Main {
             return 0;
         
         if (n % 2 == 0)
-            return 1 + sumEvenn (n / 2);
+            return 1 + sumEven (n / 2);
         else
             return 1 + sumEven(n / 3);
     }
