@@ -5,11 +5,9 @@ public class Main {
             return 0;
         
         if (n % 2 == 0)
-            n /= 2;
+            return 1 + sumEvenn (n / 2);
         else
-            n /= 3;
-
-        return 1 + sumEven(n);
+            return 1 + sumEven(n / 3);
     }
 
     public static void main(String[] args) {
