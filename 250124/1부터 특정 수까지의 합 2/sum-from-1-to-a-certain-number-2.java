@@ -4,7 +4,7 @@ public class Main {
         if (n == 0)
             return 0;
 
-        return n += sum(n-1);
+        return sum(n-1) + n;
     }
 
     public static void main(String[] args) {
