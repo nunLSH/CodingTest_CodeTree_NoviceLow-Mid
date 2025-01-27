@@ -24,8 +24,8 @@ public class Main {
         for (int i = 0; i < n; i++)
             b[i] = sc.nextInt();
 
-        Arrays.sort(a);
-        Arrays.sort(b);
+        Arrays.sort(a, 0, n);
+        Arrays.sort(b, 0, n);
 
         System.out.print(equal());
     }
