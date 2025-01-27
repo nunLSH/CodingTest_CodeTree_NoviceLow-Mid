@@ -5,12 +5,12 @@ public class Main {
     public static int[] a = new int[100];
     public static int[] b = new int[100];
 
-    public static boolean equal() {
+    public static String equal() {
         for(int i = 0; i < n; i++)
             if(a[i] != b[i])
-                return false;
+                return "No";
         
-        return true;
+        return "Yes";
     }
 
     public static void main(String[] args) {
@@ -24,12 +24,9 @@ public class Main {
         for (int i = 0; i < n; i++)
             b[i] = sc.nextInt();
 
-        Arrays.sort(a, 0, n);
-        Arrays.sort(b, 0, n);
+        Arrays.sort(a);
+        Arrays.sort(b);
 
-        if(equal())
-            System.out.print("Yes");
-        else
-            System.out.print("No");
+        System.out.print(equal());
     }
 }
