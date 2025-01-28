@@ -13,7 +13,7 @@ public class Main {
         int index = 0;
         for (int i = 0; i < n; i++){
             String str = sc.next();
-            if (str.contains(t)){
+            if (str.charAt(0) == t.charAt(0) && str.charAt(1) == t.charAt(1)){
                 arr[index] = str;
                 index++;
             }
