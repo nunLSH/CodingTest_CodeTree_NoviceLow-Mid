@@ -2,13 +2,6 @@ import java.util.Scanner;
 import java.util.Arrays;
 
 public class Main {
-    public static String isEquals(char[] arr1, char[] arr2) {
-        for (int i = 0; i < arr1.length; i++){
-            if (arr1[i] != arr2[i] || arr1.length != arr2.length)
-                return "No";
-        }
-        return "Yes";
-    }
     public static void main(String[] args) {
         Scanner sc = new Scanner(System.in);
 
@@ -21,6 +14,9 @@ public class Main {
         Arrays.sort(arr1, 0, arr1.length);
         Arrays.sort(arr2, 0, arr2.length);
 
-        System.out.print(isEquals(arr1, arr2));
+        String sorted1 = new String(arr1);
+        String sorted2 = new String(arr2);
+
+        System.out.print(sorted1.equals(sorted2) ? "Yes" : "No");
     }
 }
