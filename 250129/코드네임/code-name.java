@@ -4,11 +4,6 @@ class Agent {
     char name;
     int score;
 
-    public Agent(){
-        this.name = ' ';
-        this.score = 0;
-    }
-
     public Agent(char name, int score){
         this.name = name;
         this.score = score;
