@@ -4,8 +4,8 @@ class User {
     int level;
 
     public User () {
-        this.id = "codetree";
-        this.level = 10;
+        this.id;
+        this.level;
     }
 
     public User(String id, int level){
@@ -21,6 +21,8 @@ public class Main {
         int level = sc.nextInt();
 
         User user1 = new User();
+        user1.id = "codetree";
+        user1.level = 10;
         User user2 = new User(id, level);
         
         System.out.print("user "+ user1.id+ " lv "+user1.level);
