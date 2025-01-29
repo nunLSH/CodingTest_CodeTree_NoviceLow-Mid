@@ -4,8 +4,8 @@ class User {
     int level;
 
     public User () {
-        this.id;
-        this.level;
+        this.id = "";
+        this.level = 0;
     }
 
     public User(String id, int level){
