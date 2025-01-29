@@ -20,15 +20,12 @@ public class Main {
             agents[i] = new Agent(name, score);
         }
 
-        char minName = agents[0].name;
-        int minScore = agents[0].score;
-
+        int minIndex = 0;
         for (int i = 0; i < 5; i++){
             if (minScore > agents[i].score){
-                minScore = agents[i].score;
-                minName = agents[i].name;
+                minIndex = i;
             }
         }
-        System.out.print(minName+" "+minScore);
+        System.out.print(agents[minIndex].name+" "+agents[minIndex].score);
     }
 }
