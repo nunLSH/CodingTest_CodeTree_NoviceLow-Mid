@@ -31,8 +31,6 @@ public class Main {
             arr[i] = new User(name, address, city);
         }
 
-        Arrays.sort(names, 0, n);
-
         int index = 0;
         for (int i = 1; i < n; i++){
             if (arr[i].name.compareTo(arr[index].name) > 0)
