@@ -22,7 +22,7 @@ public class Main {
 
         int minIndex = 0;
         for (int i = 0; i < 5; i++){
-            if (minScore > agents[i].score){
+            if (agents[minIndex].score > agents[i].score){
                 minIndex = i;
             }
         }
