@@ -21,29 +21,25 @@ public class Main {
         Scanner sc = new Scanner(System.in);
 
         int n = sc.nextInt();
-        String[] names = new String[n];
+
         User[] arr = new User[n];
         for (int i = 0; i < n; i++){
             String name = sc.next();
             String address = sc.next();
             String city = sc.next();
 
-            names[i] = name;    
             arr[i] = new User(name, address, city);
         }
 
         Arrays.sort(names, 0, n);
 
-        User user = new User();
-
         int index = 0;
-        user.name = names[n-1];
-        for (int i = 0; i < n; i++){
-            if (user.name.equals(arr[i].name))
+        for (int i = 1; i < n; i++){
+            if (arr[i].name.compareTo(arr[index].name) > 0)
                 index = i;
         }
-        
-        System.out.println("name "+user.name);
+
+        System.out.println("name "+arr[index].name);
         System.out.println("addr "+arr[index].address);
         System.out.println("city "+arr[index].city);
     }
