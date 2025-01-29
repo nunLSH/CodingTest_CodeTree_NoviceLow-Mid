@@ -1,11 +1,11 @@
 import java.util.Scanner;
 
-class Instance {
+class Spy {
     String secretCode;
     char meetingPoint;
     int time;
 
-    public Instance(String secretCode, char meetingPoint, int time){
+    public Spy(String secretCode, char meetingPoint, int time){
         this.secretCode = secretCode;
         this.meetingPoint = meetingPoint;
         this.time = time;
@@ -20,10 +20,10 @@ public class Main {
         char meetingPoint = sc.next().charAt(0);
         int time = sc.nextInt();
 
-        Instance i = new Instance(secretCode, meetingPoint, time);
+        Spy spy = new Spy(secretCode, meetingPoint, time);
 
-        System.out.println("secret code : "+i.secretCode);
-        System.out.println("meeting point : "+ i.meetingPoint);
-        System.out.println("time : "+ i.time);
+        System.out.println("secret code : "+ spy.secretCode);
+        System.out.println("meeting point : "+ spy.meetingPoint);
+        System.out.println("time : "+ spy.time);
     }
 }
