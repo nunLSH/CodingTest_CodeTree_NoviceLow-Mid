@@ -28,18 +28,15 @@ public class Main {
 
                 if (date_y < idx_y){
                     idx = i;
-                    return idx;
                 }
 
                 if (date_y == idx_y){
                     if (date_m < idx_m){
                         idx = i;
-                        return idx;
                     }
                     else if (date_m == idx_m){
                         if (date_d <= idx_d){
                             idx = i;
-                            return idx;
                         }
                     }
                 }
@@ -62,8 +59,10 @@ public class Main {
         }
 
         for (int i = 0; i < n; i++){
-            if (arr[i].weather.equals("Rain"))
+            if (arr[i].weather.equals("Rain")){
                 idx = i;
+                break;
+            }
         }
 
         int index = findIndex();
