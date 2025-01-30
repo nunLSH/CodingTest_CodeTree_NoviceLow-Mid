@@ -12,7 +12,7 @@ class Student implements Comparable<Student> {
     }
 
     @Override
-    public int compareTo(Student student) { // 국어 점수 기준 오름차순 정렬
+    public int compareTo(Student student) { 
         return this.height - student.height;
     }
 };
