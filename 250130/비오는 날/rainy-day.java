@@ -57,11 +57,13 @@ public class Main {
             String date = sc.next();
             String day = sc.next();
             String weather = sc.next();
-            
-            if (weather.equals("Rain"))
-                idx = i;
 
             arr[i] = new Weather(date, day, weather);
+        }
+
+        for (int i = 0; i < n; i++){
+            if (arr[i].weather.equals("Rain"))
+                idx = i;
         }
 
         int index = findIndex();
