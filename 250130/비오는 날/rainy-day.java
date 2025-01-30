@@ -1,71 +1,35 @@
 import java.util.Scanner;
 
-class Weather {
+class Forecast {
     String date, day, weather;
 
-    public Weather(String date, String day, String weather) {
+    public Forecast(String date, String day, String weather) {
         this.date = date;
         this.day = day;
         this.weather = weather;
     }
 }
+
 public class Main {
-    public static int n;
-    public static Weather[] arr = new Weather[100];
-    public static int idx = 0;
-
-    public static int findIndex(){
-        for (int i = 0; i < n; i++){
-            if (arr[i].weather.equals("Rain")){
-
-                int date_y = Integer.parseInt(arr[i].date.substring(0, 4));
-                int date_m = Integer.parseInt(arr[i].date.substring(5, 7));
-                int date_d = Integer.parseInt(arr[i].date.substring(8, 10));
-
-                int idx_y = Integer.parseInt(arr[idx].date.substring(0, 4));
-                int idx_m = Integer.parseInt(arr[idx].date.substring(5, 7));
-                int idx_d = Integer.parseInt(arr[idx].date.substring(8, 10));
-
-                if (date_y < idx_y){
-                    idx = i;
-                }
-
-                if (date_y == idx_y){
-                    if (date_m < idx_m){
-                        idx = i;
-                    }
-                    else if (date_m == idx_m){
-                        if (date_d <= idx_d){
-                            idx = i;
-                        }
-                    }
-                }
-            }
-        }
-        return idx;
-    }
+    public static Forecast ans = new Forecast("9999-99-99", "", "");
 
     public static void main(String[] args) {
         Scanner sc = new Scanner(System.in);
 
-        n = sc.nextInt();
+        int n = sc.nextInt();
 
         for (int i = 0; i < n; i++){
             String date = sc.next();
             String day = sc.next();
             String weather = sc.next();
 
-            arr[i] = new Weather(date, day, weather);
-        }
-
-        for (int i = 0; i < n; i++){
-            if (arr[i].weather.equals("Rain")){
-                idx = i;
-                break;
+            Forecast f = new Forecast(date, day, weather);
+            if (weather.equals("Rain")) {
+                if (ans.date.compareTo(f.date) > 0)
+                    ans = f;
             }
         }
 
-        int index = findIndex();
-        System.out.print(arr[index].date+" "+arr[index].day+" "+arr[index].weather);
+        System.out.print(ans.date+" "+ans.day+" "+ans.weather);
     }
 }
