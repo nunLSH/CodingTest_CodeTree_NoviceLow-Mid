@@ -25,13 +25,8 @@ public class Main {
         for (int i = 0; i < n; i++){
             int x = sc.nextInt();
             int y = sc.nextInt();
-
-            if (x < 0)
-                x = -x;
-            if (y < 0)
-                y = -y;
             
-            int distance = x+y;
+            int distance = Math.abs(x) + Math.abs(y);
 
             dots[i] = new Dot(i+1, distance);
         }
