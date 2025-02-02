@@ -18,16 +18,21 @@ public class Main {
         int m2 = sc.nextInt();
         int d2 = sc.nextInt();
 
-        int difference = 0;
-        difference = totalDays(m2, d2) - totalDays(m1, d1);
+        int difference = totalDays(m2, d2) - totalDays(m1, d1);
 
         String[] dayOfWeek = new String[]{"Mon", "Tue", "Wed", "Thu", "Fri", "Sat", "Sun"};
+        
+        // 방법 1 (내 풀이)
+        // if (difference >= 0)
+        //     System.out.print(dayOfWeek[difference % 7]);
+        // else {
+        //     difference = Math.abs(difference);
+        //     System.out.print(dayOfWeek[7 - (difference % 7)]);
+        // }
 
-        if (difference >= 0)
-            System.out.print(dayOfWeek[difference % 7]);
-        else {
-            difference = Math.abs(difference);
-            System.out.print(dayOfWeek[7 - (difference % 7)]);
-        }
+        // 방법 2 (해설 참고)
+        while(difference < 0)
+            difference += 7;
+        System.out.print(dayOfWeek[difference % 7]);
     }
 }
