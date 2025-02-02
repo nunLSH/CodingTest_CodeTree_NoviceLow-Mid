@@ -15,11 +15,7 @@ public class Main {
         int b = sc.nextInt();
         int c = sc.nextInt();
 
-        if (a < 11)
-            System.out.print(-1);
-        else if (a == 11 && b < 11)
-            System.out.print(-1);
-        else if (a == 11 && b == 11 && c < 11)
+        if (totalMin(a, b, c) - totalMin(11, 11, 11) < 0)
             System.out.print(-1);
         else 
             System.out.print(totalMin(a, b, c) - totalMin(11, 11, 11));
