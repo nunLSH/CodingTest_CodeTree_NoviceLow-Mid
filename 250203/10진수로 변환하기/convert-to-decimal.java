@@ -3,17 +3,11 @@ public class Main {
     public static void main(String[] args) {
         Scanner sc = new Scanner(System.in);
 
-        String number = sc.next();
-        char[] nums = number.toCharArray();
-        int[] digits = new int[number.length()];
-
-        for (int i = 0; i < number.length(); i++){
-            digits[i] = nums[i] - '0';
-        }
+        String binary = sc.next();
 
         int num = 0;
-        for (int i = 0; i < number.length(); i++)
-            num = num * 2 + digits[i];
+        for (int i = 0; i < binary.length(); i++)
+            num = num * 2 + (binary.charAt(i) - '0');
             
         System.out.print(num);
     }
