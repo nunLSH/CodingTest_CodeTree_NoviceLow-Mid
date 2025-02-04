@@ -5,7 +5,7 @@ public class Main {
         Scanner sc = new Scanner(System.in);
 
         int n = sc.nextInt();
-        int[] num = new int[2001];
+        int[] num = new int[2000];
         int idx = 1000;
         for (int i = 0; i < n; i++){
             int size = sc.nextInt();
@@ -17,14 +17,14 @@ public class Main {
                 }
                 idx += size; 
             } else {
-                for (int k = idx; k > idx - size; k--){
+                for (int k = idx - 1; k >= idx - size; k--){
                     num[k]++;
                 }
                 idx -= size;
             }
         }
         int cnt = 0;
-        for (int i = 0; i < 2001; i++){
+        for (int i = 0; i < 2000; i++){
             if (num[i] >= 2)
                 cnt++;
         }
