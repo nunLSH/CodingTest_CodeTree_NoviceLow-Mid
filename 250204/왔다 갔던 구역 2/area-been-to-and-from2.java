@@ -6,21 +6,21 @@ public class Main {
 
         int n = sc.nextInt();
         int[] num = new int[2000];
-        int idx = 1000;
+        int cur = 1000;
         for (int i = 0; i < n; i++){
             int size = sc.nextInt();
             char direction = sc.next().charAt(0);
             
             if (direction == 'R'){
-                for (int k = idx; k < idx + size; k++){
+                for (int k = cur; k < cur + size; k++){
                     num[k]++;
                 }
-                idx += size; 
+                cur += size; 
             } else {
-                for (int k = idx - 1; k >= idx - size; k--){
+                for (int k = cur - 1; k >= cur - size; k--){
                     num[k]++;
                 }
-                idx -= size;
+                cur -= size;
             }
         }
         int cnt = 0;
