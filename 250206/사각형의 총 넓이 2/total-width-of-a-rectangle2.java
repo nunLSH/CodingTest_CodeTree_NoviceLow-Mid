@@ -19,13 +19,13 @@ public class Main {
             }
         }
 
-        int area = 0;
+        int area0 = 0;
         for (int i = 0; i < 200; i++){
             for (int j = 0; j < 200; j++){
-                if (square[i][j] == 1 || square[i][j] == 2)
-                    area++;
+                if (square[i][j] == 0)
+                    area0++;
             }
         }
-        System.out.print(area);
+        System.out.print(200 * 200 - area0);
     }
 }
