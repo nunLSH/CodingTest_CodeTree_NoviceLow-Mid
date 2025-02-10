@@ -32,9 +32,11 @@ public class Main {
         for (int i = y1; i < y2; i++){
             int cnt = 0;
             for (int j = x1; j < x2; j++){
-                if (square[j][i] == 1){
+                if (square[j][i] == 2){
+                    if (x1 < i && x2 > i)
+                        cnt++;
+                } else
                     cnt++;
-                }
             }
             if (width < cnt)
                 width = cnt;
@@ -44,9 +46,11 @@ public class Main {
         for (int i = x1; i < x2; i++){
             int cnt = 0;
             for (int j = y1; j < y2; j++){
-                if (square[i][j] == 1){
+                if (square[i][j] == 2){
+                    if (y1 < j && y2 > j)
+                        cnt++;
+                } else
                     cnt++;
-                }
             }
             if (height < cnt)
                 height = cnt;
