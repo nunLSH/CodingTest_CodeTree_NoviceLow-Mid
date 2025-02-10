@@ -27,35 +27,39 @@ public class Main {
                 square[j][k] = 2;
         }
 
-        // 가로
-        int width = 0;
-        for (int i = y1; i < y2; i++){
-            int cnt = 0;
-            for (int j = x1; j < x2; j++){
-                if (square[j][i] == 2){
-                    if (x1 < i && x2 > i)
+        if (x21 <= x1 && y21 <= y1 && x2 <= x22 & y2 <= y22)
+            System.out.print(0);
+        else {
+            // 가로
+            int width = 0;
+            for (int i = y1; i < y2; i++){
+                int cnt = 0;
+                for (int j = x1; j < x2; j++){
+                    if (square[j][i] == 2){
+                        if (x1 < i && x2 > i)
+                            cnt++;
+                    } else
                         cnt++;
-                } else
-                    cnt++;
+                }
+                if (width < cnt)
+                    width = cnt;
             }
-            if (width < cnt)
-                width = cnt;
-        }
-        // 세로
-        int height = 0;
-        for (int i = x1; i < x2; i++){
-            int cnt = 0;
-            for (int j = y1; j < y2; j++){
-                if (square[i][j] == 2){
-                    if (y1 < j && y2 > j)
+            // 세로
+            int height = 0;
+            for (int i = x1; i < x2; i++){
+                int cnt = 0;
+                for (int j = y1; j < y2; j++){
+                    if (square[i][j] == 2){
+                        if (y1 < j && y2 > j)
+                            cnt++;
+                    } else
                         cnt++;
-                } else
-                    cnt++;
+                }
+                if (height < cnt)
+                    height = cnt;
             }
-            if (height < cnt)
-                height = cnt;
-        }
 
-        System.out.print(width * height);
+            System.out.print(width * height);
+        }
     }
 }
