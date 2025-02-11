@@ -19,7 +19,6 @@ public class Main {
                     area[j][k] = i % 2 == 0 ? 1 : 2;
                 }
             }
-            
         }
         
         int cnt = 0;
@@ -29,7 +28,6 @@ public class Main {
                     cnt++;
             }
         }
-
         System.out.print(cnt);
     }
 }
