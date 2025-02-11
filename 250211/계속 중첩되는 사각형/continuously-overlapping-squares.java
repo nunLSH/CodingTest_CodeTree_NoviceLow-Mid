@@ -14,21 +14,12 @@ public class Main {
             int x2 = sc.nextInt() + OS;
             int y2 = sc.nextInt() + OS;
 
-            if (i % 2 == 0) {
-                for (int j = x1; j < x2; j++){
-                    for (int k = y1; k < y2; k++){
-                        area[j][k] = 1;
-                    }
+            for (int j = x1; j < x2; j++){
+                for (int k = y1; k < y2; k++){
+                    area[j][k] = i % 2 == 0 ? 1 : 2;
                 }
             }
-
-            if (i % 2 != 0) {
-                for (int j = x1; j < x2; j++){
-                    for (int k = y1; k < y2; k++){
-                        area[j][k] = 2;
-                    }
-                }
-            }
+            
         }
         
         int cnt = 0;
