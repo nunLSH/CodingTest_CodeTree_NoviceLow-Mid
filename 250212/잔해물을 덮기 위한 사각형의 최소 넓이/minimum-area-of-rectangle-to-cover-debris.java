@@ -31,7 +31,6 @@ public class Main {
             }
 
             int minx = 0, miny = 0, cnt = 0;
-            int maxx = 0, maxy = 0;
 
             for (int i = x1; i < x2; i++){
                 for (int j = y1; j < y2; j++){
@@ -46,6 +45,8 @@ public class Main {
                     break;
             }
 
+            int maxx = minx, maxy = miny;
+            
             for (int i = x1; i < x2; i++){
                 for (int j = y1; j < y2; j++){
                     if (square[i][j] == 1){
