@@ -46,20 +46,20 @@ public class Main {
             }
 
             int maxx = minx, maxy = miny;
-            
+
             for (int i = x1; i < x2; i++){
                 for (int j = y1; j < y2; j++){
                     if (square[i][j] == 1){
-                        if (minx < i)
+                        if (maxx < i)
                             maxx = i;
-                        if (miny < j)
+                        if (maxy < j)
                             maxy = j;
                     }
                 }
             }
             int width = maxx - minx + 1;
             int height = maxy - miny + 1;
-            
+        
             System.out.print(width * height);
         }
     }
