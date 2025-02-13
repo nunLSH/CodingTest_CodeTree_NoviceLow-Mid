@@ -41,12 +41,9 @@ public class Main {
 
         int cntW = 0, cntB = 0, cntG = 0;
         for (int i = 0; i < 2 * MAX; i++){
-            if (tiles[0][i] == 3) // 회색
-                cntG++;
-            if (tiles[0][i] == 1) // 검은색
-                cntB++;
-            if (tiles[0][i] == 2) // 흰색
-                cntW++;
+            if (tiles[0][i] == 3) cntG++; // 회색
+            if (tiles[0][i] == 1) cntB++; // 검은색
+            if (tiles[0][i] == 2) cntW++; // 흰색
         }
         System.out.print(cntW+" "+cntB+" "+cntG);
     }
