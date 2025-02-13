@@ -10,12 +10,7 @@ public class Main {
         for (int i = 0; i < n; i++){
             nums[i] = sc.nextInt();
 
-            if (nums[i] < 0)
-                nums[i] = 0;
-            else
-                nums[i] = 1;
-
-            if (i >= 1 && nums[i] == nums[i-1])
+            if (i >= 1 && nums[i] * nums[i-1] > 0)
                 cnt++;
             else
                 cnt = 1;
