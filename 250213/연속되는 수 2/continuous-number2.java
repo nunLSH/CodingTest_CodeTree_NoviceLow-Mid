@@ -9,13 +9,12 @@ public class Main {
 
         for (int i = 0; i < n; i++){
             arr[i] = sc.nextInt();
-            if (i == 0 || arr[i] != arr[i-1]) {
-                cnt = 1;
-            } else if (arr[i] == arr[i-1])
+            if (i >= 1 && arr[i] == arr[i-1]) {
                 cnt++;
+            } else 
+                cnt = 1;
             
-            if (cnt > maxCnt)
-                maxCnt = cnt;
+            maxCnt = Math.max(maxCnt, cnt);
         }
         System.out.print(maxCnt);
     }
