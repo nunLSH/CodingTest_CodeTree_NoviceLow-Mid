@@ -10,22 +10,22 @@ public class Main {
         int n = sc.nextInt();
         int m = sc.nextInt();
 
-        int curT_a = 1, curT_b = 1; // 현재 시간
-        int cur_a = 0, cur_b = 0; // 현재 위치 
+        int timeA = 1, timeB = 1; // 현재 시간
+        int posA = 0, posB = 0; // 현재 위치 
 
         // A
         for (int i = 0; i < n; i++){
             char d = sc.next().charAt(0);
             int t = sc.nextInt();
             
-            for (int j = curT_a; j < curT_a + t; j++){
-                if (d == 'R'){
-                    a[j] = ++cur_a;
-                } else {
-                    a[j] = --cur_a;
-                }
+            while (t-- > 0){
+                if (d == 'R')
+                    a[timeA] = ++posA;
+                else 
+                    a[timeA] = --posA;
+
+                timeA++;
             }
-            curT_a = curT_a + t;
         }
 
         // B
@@ -33,27 +33,23 @@ public class Main {
             char d = sc.next().charAt(0);
             int t = sc.nextInt();
 
-            for (int j = curT_b; j < curT_b + t; j++){
-                if (d == 'R'){
-                    b[j] = ++cur_b;
-                } else {
-                    b[j] = --cur_b;
-                }
+            while (t-- > 0) {
+                if (d == 'R')
+                    b[timeB] = ++posB;
+                else 
+                    b[timeB] = --posB;
+
+                timeB++;
             }
-            curT_b = curT_b + t;
         }
 
-        int cnt = 0;
-        for (int i = 1; i < curT_a; i++){
+        int ans = -1;
+        for (int i = 1; i < timeA; i++){
             if (a[i] == b[i]){
-                System.out.println(i);
+                ans = i;
                 break;
-            } else {
-                cnt++;
             }
         }
-        
-        if (cnt == curT_a -1)
-            System.out.print(-1);
+        System.out.println(ans);
     }
 }
