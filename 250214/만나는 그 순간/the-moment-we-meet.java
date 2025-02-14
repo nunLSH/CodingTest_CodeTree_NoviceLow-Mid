@@ -12,7 +12,7 @@ public class Main {
 
         int curT_a = 1, curT_b = 1; // 현재 시간
         int cur_a = 0, cur_b = 0; // 현재 위치 
-        
+
         // A
         for (int i = 0; i < n; i++){
             char d = sc.next().charAt(0);
@@ -43,11 +43,17 @@ public class Main {
             curT_b = curT_b + t;
         }
 
+        int cnt = 0;
         for (int i = 1; i < curT_a; i++){
             if (a[i] == b[i]){
-                    System.out.println(i);
-                    break;
+                System.out.println(i);
+                break;
+            } else {
+                cnt++;
             }
         }
+        
+        if (cnt == curT_a -1)
+            System.out.print(-1);
     }
 }
