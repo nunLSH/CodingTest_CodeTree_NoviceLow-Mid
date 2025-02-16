@@ -36,16 +36,28 @@ public class Main {
         }
 
         int cnt = 0;
-        boolean aIsFirst = false;
+        int aIsFirst = 0;
         for (int i = 1; i <= timeA; i++){
+
+            if (i == 1){
+                if (a[1] > b[1])
+                    aIsFirst = 1;
+                else if (a[1] < b[1])
+                    aIsFirst = 2;
+                else
+                    aIsFirst = 0;
+            }
+
             if (a[i] > b[i]){
-                if (aIsFirst == false)
+                if (aIsFirst == 2)
                     cnt++;
-                aIsFirst = true;
+                aIsFirst = 1;
             } else if (a[i] < b[i]) {
-                if (aIsFirst == true)
+                if (aIsFirst == 1)
                     cnt++;
-                aIsFirst = false;
+                aIsFirst = 2;
+            } else {
+                continue;
             }
         }
         System.out.print(cnt);
