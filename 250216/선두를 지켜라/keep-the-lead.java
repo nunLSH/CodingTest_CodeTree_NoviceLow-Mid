@@ -42,7 +42,7 @@ public class Main {
                 if (aIsFirst == false)
                     cnt++;
                 aIsFirst = true;
-            } else {
+            } else if (a[i] < b[i]) {
                 if (aIsFirst == true)
                     cnt++;
                 aIsFirst = false;
