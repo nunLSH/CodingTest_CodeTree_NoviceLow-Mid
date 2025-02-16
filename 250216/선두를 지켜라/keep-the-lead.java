@@ -11,54 +11,39 @@ public class Main {
         int m = sc.nextInt();
 
         int timeA = 1, timeB = 1;
-        int curA = 0, curB = 0;
 
         for (int i = 0; i < n; i++){
             int v = sc.nextInt();
             int t = sc.nextInt();
 
-            for (int j = timeA; j < timeA + t; j++){
-                curA += v;
-                a[j] = curA;
+            while(t-- > 0){
+                a[timeA] = a[timeA - 1] + v;
+                timeA++;
             }
-            timeA += t;
         }
 
         for (int i = 0; i < m; i++){
             int v = sc.nextInt();
             int t = sc.nextInt();
 
-            for (int j = timeB; j < timeB + t; j++){
-                curB += v;
-                b[j] = curB;
+            while(t-- > 0){
+                b[timeB] = b[timeB - 1] + v;
+                timeB++;
             }
-            timeB += t;
         }
 
         int cnt = 0;
-        int aIsFirst = 0;
-        for (int i = 1; i <= timeA; i++){
-
-            if (i == 1){
-                if (a[1] > b[1])
-                    aIsFirst = 1;
-                else if (a[1] < b[1])
-                    aIsFirst = 2;
-                else
-                    aIsFirst = 0;
-            }
-
+        int leader = 0; // A(1), B(2)
+        for (int i = 1; i < timeA; i++){
             if (a[i] > b[i]){
-                if (aIsFirst == 2)
+                if (leader == 2)
                     cnt++;
-                aIsFirst = 1;
+                leader = 1;
             } else if (a[i] < b[i]) {
-                if (aIsFirst == 1)
+                if (leader == 1)
                     cnt++;
-                aIsFirst = 2;
-            } else {
-                continue;
-            }
+                leader = 2;
+            } 
         }
         System.out.print(cnt);
     }
