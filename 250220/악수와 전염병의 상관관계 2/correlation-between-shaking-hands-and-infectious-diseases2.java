@@ -42,12 +42,13 @@ public class Main {
         for (int i = 0; i < t; i++){
             int xDevs = intro[i].x;
             int yDevs = intro[i].y;
-            // x가 감염된 개발자이면서 감염시킬 수 있는 경우 (악수 횟수 최대 미만)
-            if (devs[0][xDevs] == 1 && devs[1][xDevs] < k) {
+            // x나 y가 감염된 개발자이면서 감염 가능한 악수횟수도 남아있을 경우
+            if ((devs[0][xDevs] == 1 && devs[1][xDevs] < k) || (devs[0][yDevs] == 1 && devs[1][yDevs] < k)) {
+                devs[0][xDevs] = 1;
                 devs[0][yDevs] = 1;
                 devs[1][xDevs]++; // 악수횟수 중가
                 devs[1][yDevs]++;
-            } else if (devs[0][xDevs] == 0 || devs[1][xDevs] >= k){
+            } else { // 감염 불가능
                 devs[1][xDevs]++;
                 devs[1][yDevs]++;
             }
