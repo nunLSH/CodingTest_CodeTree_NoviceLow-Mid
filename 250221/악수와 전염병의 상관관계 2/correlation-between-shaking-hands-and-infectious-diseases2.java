@@ -20,7 +20,7 @@ public class Main {
         Scanner sc = new Scanner(System.in);
 
         int n = sc.nextInt();
-        int[][] devs = new int[2][n+1]; // 개발자 배열 (0:감염여부, 1:악수 횟수)
+        int[][] devs = new int[2][n+1]; // 개발자 배열 (0:감염여부, 1:감염 횟수)
         int k = sc.nextInt();
         int p = sc.nextInt();
         int t = sc.nextInt();
@@ -42,16 +42,16 @@ public class Main {
         for (int i = 0; i < t; i++){
             int xDevs = intro[i].x;
             int yDevs = intro[i].y;
-            // x나 y가 감염된 개발자이면서 감염 가능한 악수횟수도 남아있을 경우
-            if ((devs[0][xDevs] == 1 && devs[1][xDevs] < k) || (devs[0][yDevs] == 1 && devs[1][yDevs] < k)) {
+            // x나 y가 감염된 개발자이면서 감염 가능한 횟수도 남아있을 경우
+            if (devs[0][xDevs] == 1 && devs[1][xDevs] < k) {
                 devs[0][xDevs] = 1;
                 devs[0][yDevs] = 1;
-                devs[1][xDevs]++; // 악수횟수 중가
-                devs[1][yDevs]++;
-            } // else { // 감염 불가능
-            //     devs[1][xDevs]++;
-            //     devs[1][yDevs]++;
-            // }
+                devs[1][xDevs]++; // 전염 횟수 중가
+            } else if (devs[0][yDevs] == 1 && devs[1][yDevs] < k) {
+                devs[0][xDevs] = 1;
+                devs[0][yDevs] = 1;
+                devs[1][yDevs]++; // 전염 횟수 중가
+            }
         }
 
         // 감염여부 출력
