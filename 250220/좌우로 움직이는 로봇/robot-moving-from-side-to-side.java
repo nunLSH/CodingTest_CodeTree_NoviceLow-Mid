@@ -1,6 +1,6 @@
 import java.util.Scanner;
 public class Main {
-    public static final int MAX = 1000000 * 2; 
+    public static final int MAX = 1000000; 
     public static int[] a = new int[MAX+1];
     public static int[] b = new int[MAX+1];
 
@@ -17,12 +17,15 @@ public class Main {
             
             while(t-- > 0) {
                 if (d == 'L'){
-                    --a[timeA++];
+                    a[timeA] = a[timeA++ - 1] - 1;
                 } else {
-                    ++a[timeA++];
+                    a[timeA] = a[timeA++ - 1] + 1;
                 }
             }
-             
+        }
+
+        for (int j = timeA; j < MAX + 1; j++){
+                a[j] = a[timeA - 1];
         }
 
         for (int i = 0; i < m; i++){
@@ -31,13 +34,17 @@ public class Main {
             
             while(t-- > 0) {
                 if (d == 'L'){
-                    --b[timeB++];
+                    b[timeB] = b[timeB++ - 1] - 1;
                 } else {
-                    ++b[timeB++];
+                    b[timeB] = b[timeB++ - 1] + 1;
                 }
-
             }
         }
+
+        for (int j = timeB; j < MAX + 1; j++){
+            b[j] = b[timeB - 1];
+        }
+        
         int cnt = 0;
         for (int i = 2; i < MAX+1; i++){
             if (a[i] == b[i]){
