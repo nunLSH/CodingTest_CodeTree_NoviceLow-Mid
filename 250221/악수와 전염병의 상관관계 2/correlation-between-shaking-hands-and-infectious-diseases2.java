@@ -47,7 +47,8 @@ public class Main {
                 devs[0][xDevs] = 1;
                 devs[0][yDevs] = 1;
                 devs[1][xDevs]++; // 전염 횟수 중가
-            } else if (devs[0][yDevs] == 1 && devs[1][yDevs] < k) {
+            } 
+            if (devs[0][yDevs] == 1 && devs[1][yDevs] < k) {
                 devs[0][xDevs] = 1;
                 devs[0][yDevs] = 1;
                 devs[1][yDevs]++; // 전염 횟수 중가
