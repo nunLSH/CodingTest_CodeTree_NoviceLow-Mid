@@ -29,8 +29,7 @@ public class Main {
             }
         }
     
-        int leader = 0;
-        int cnt = 0;
+        int leader = 0, cnt = 0;
         for (int i = 1; i < timeA; i++){
             if (a[i] > b[i]){
                 if (leader != 1)
