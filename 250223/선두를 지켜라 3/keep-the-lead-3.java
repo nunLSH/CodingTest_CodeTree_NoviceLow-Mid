@@ -6,8 +6,8 @@ public class Main {
 
         int n = sc.nextInt();
         int m = sc.nextInt();
-        int[] a = new int[MAX];
-        int[] b = new int[MAX];
+        int[] a = new int[MAX+1];
+        int[] b = new int[MAX+1];
         
         int timeA = 1, timeB = 1;
         for (int i = 0; i < n; i++){
@@ -30,18 +30,18 @@ public class Main {
         }
     
         int leader = 0;
-        int cnt = 1;
+        int cnt = 0;
         for (int i = 1; i < timeA; i++){
             if (a[i] > b[i]){
-                if (leader == 2 || leader == 3)
+                if (leader != 1)
                     cnt++;
                 leader = 1;
             } else if (a[i] < b[i]){
-                if (leader == 1 || leader == 3)
+                if (leader != 2)
                     cnt++;
                 leader = 2;
             } else {
-                if (leader == 1 || leader == 2)
+                if (leader != 3)
                     cnt++;
                 leader = 3;
             }
