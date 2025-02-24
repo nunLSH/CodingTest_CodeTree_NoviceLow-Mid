@@ -15,21 +15,16 @@ public class Main {
             char dir = sc.next().charAt(0);
             int dis = sc.nextInt();
 
-            for (int k = 0; k < dis; k++){
-                if (dir == 'W'){
-                    x += dx[0]; 
-                    y += dy[0];
-                } else if (dir == 'S'){
-                    x += dx[1]; 
-                    y += dy[1];
-                } else if (dir == 'N'){
-                    x += dx[2]; 
-                    y += dy[2];
-                } else {
-                    x += dx[3]; 
-                    y += dy[3];
-                }
-            }
+            int dirNum;
+
+    
+            if (dir == 'W') dirNum = 0;
+            else if (dir == 'S') dirNum = 1;
+            else if (dir == 'N') dirNum = 2;
+            else dirNum = 3;
+
+            x += dx[dirNum] * dis;
+            y += dy[dirNum] * dis;
         }
 
         System.out.print(x + " " + y);
