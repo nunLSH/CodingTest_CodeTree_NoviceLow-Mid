@@ -2,7 +2,7 @@ import java.util.Scanner;
 
 public class Main {
     public static int dx[] = new int[]{0, 1, -1, 0};
-    public static int dy[] = new int[]{1, 0, 0, -1};
+    public static int dy[] = new int[]{-1, 0, 0, 1};
 
     public static int N;
 
@@ -35,9 +35,8 @@ public class Main {
             if (inRange(nx, ny)) {
                 C += dx[dirNum];
                 R += dy[dirNum];
-            } else
+            } else if (!inRange(nx, ny))
                 dirNum = 3 - dirNum;
-
         }
         System.out.print(R + " " + C);
     }
