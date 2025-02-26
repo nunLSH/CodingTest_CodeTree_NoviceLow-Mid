@@ -36,8 +36,8 @@ public class Main {
             int nx = c + dx[dirNum], ny = r + dy[dirNum];
                 
             if (inRange(nx, ny)) {
-                c += nx;
-                r += ny
+                c = nx;
+                r = ny;
             } else 
                 dirNum = 3 - dirNum;
         }
