@@ -10,12 +10,12 @@ public class Main {
         return (1 <= x && x <= n && 1 <= y && y <= n);
     }
 
-    public static int getDir(int dir){
-        if (D.equals("U")) 
+    public static int getDir(String dir){
+        if (dir.equals("U")) 
             return 0;
-        else if (D.equals("R"))
+        else if (dir.equals("R"))
             return 1;
-        else if (D.equals("L"))
+        else if (dir.equals("L"))
             return 2;
         else 
             return 3;
@@ -25,23 +25,23 @@ public class Main {
         Scanner sc = new Scanner(System.in);
 
         n = sc.nextInt();
-        int T = sc.nextInt();
-        int R = sc.nextInt();
-        int C = sc.nextInt();
-        String D = sc.next();
+        int t = sc.nextInt();
+        int r = sc.nextInt();
+        int c = sc.nextInt();
+        String d = sc.next();
 
-        int dirNum = getDir(D);
+        int dirNum = getDir(d);
 
         while (t-- > 0){
-            int nx = C + dx[dirNum], ny = R + dy[dirNum];
+            int nx = c + dx[dirNum], ny = r + dy[dirNum];
                 
             if (inRange(nx, ny)) {
-                C += nx;
-                R += ny
+                c += nx;
+                r += ny
             } else 
                 dirNum = 3 - dirNum;
         }
 
-        System.out.print(R + " " + C);
+        System.out.print(r + " " + c);
     }
 }
