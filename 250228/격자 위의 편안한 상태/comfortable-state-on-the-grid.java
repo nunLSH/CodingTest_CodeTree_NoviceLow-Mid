@@ -11,7 +11,7 @@ public class Main {
         return(1 <= nx && nx <= n && 1 <= ny && ny <= n);
     }
 
-    public static boolean isComf(int x, int y){
+    public static int isComf(int x, int y){
         int cnt = 0;
         for (int i = 0; i < 4; i++){
             int nx = x + dx[i];
@@ -20,11 +20,8 @@ public class Main {
             if (inRange(nx, ny) && arr[nx][ny] == 1)
                 cnt++;
         }
-
-        if (cnt == 3)
-            return true;
  
-        return false;
+        return cnt;
     }
 
     public static void main(String[] args) {
@@ -38,7 +35,7 @@ public class Main {
 
             arr[r][c] = 1;
 
-            if (isComf(r, c))
+            if (isComf(r, c) == 3)
                 System.out.println(1);
             else
                 System.out.println(0);
