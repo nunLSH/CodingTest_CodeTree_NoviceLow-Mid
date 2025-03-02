@@ -1,11 +1,11 @@
 import java.util.Scanner;
 public class Main {
-    public static int n, m, dir = 0;
+    public static int n, m;
     public static int[] dx = new int[]{1, 0, -1, 0};
     public static int[] dy = new int[]{0, 1, 0, -1};
 
     public static int[][] arr = new int[101][101];
-    public static int x = 1, y = 1;
+    public static int x = 1, y = 1, dir = 0;
 
     public static boolean inRange(int x, int y){
         return (0 < x && x <= n && 0 < y && y <= m);
