@@ -19,22 +19,22 @@ public class Main {
         Scanner sc = new Scanner(System.in);
         n = sc.nextInt();
         m = sc.nextInt();
-
-        arr[x][y] = c;
         
-        for (int i = 1; i < n * m; i++){
+        for (int i = 1; i <= n * m; i++){
             int nx = x + dx[dir], ny = y + dy[dir];
 
-            if (inRange(nx, ny) && arr[nx][ny] == 0){
-                x = nx;
-                y = ny;
-            } else {
-                dir = (dir + 1) % 4;
-                x = x + dx[dir];
-                y = y + dy[dir];
+            if (i != 1) {
+                if (inRange(nx, ny) && arr[nx][ny] == 0){
+                    x = nx;
+                    y = ny;
+                } else {
+                    dir = (dir + 1) % 4;
+                    x = x + dx[dir];
+                    y = y + dy[dir];
+                }
             }
             
-            arr[x][y] = ++c;
+            arr[x][y] = c++;
 
             if (arr[x][y] == 'Z')
                 c = 'A';
