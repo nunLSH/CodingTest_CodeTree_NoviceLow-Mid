@@ -1,7 +1,7 @@
 import java.util.Scanner;
 public class Main {
     public static int n;
-    public static final int MAX = 100 * 100;
+    public static final int MAX = Integer.MAX_VALUE;
     public static int[] home = new int[101];
 
     public static void main(String[] args) {
