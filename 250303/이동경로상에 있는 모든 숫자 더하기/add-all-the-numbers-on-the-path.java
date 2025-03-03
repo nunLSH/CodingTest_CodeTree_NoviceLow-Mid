@@ -9,13 +9,11 @@ public class Main {
 
     public static int x, y, dir = 3;
 
-    public static int getDir(int cmd){
+    public static void getDir(int cmd){
         if (cmd == 'L')
             dir = (dir + 3) % 4;
         else if (cmd == 'R')
             dir = (dir + 1) % 4;
-        
-        return dir;
     }
 
     public static boolean inRange(int x, int y){
@@ -44,11 +42,13 @@ public class Main {
             char cmd = commands.charAt(i);
             getDir(cmd);
 
-            int nx = x + dx[dir], ny = y + dy[dir];
-            if (inRange(nx, ny)){
-                x = nx;
-                y = ny;
-                sum += board[nx][ny];
+            if (cmd == 'F') {
+                int nx = x + dx[dir], ny = y + dy[dir];
+                if (inRange(nx, ny)){
+                    x = nx;
+                    y = ny;
+                    sum += board[x][y];
+                }
             }
         }
 
