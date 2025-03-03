@@ -7,15 +7,11 @@ public class Main {
         int len = a.length();
 
         int cnt = 0;
-        for (int i = 0; i < len - 1; i++){
-            char c = a.charAt(i);
-            if (c == '(') {
-                for (int j = i + 1; j < len; j++){
-                    if (a.charAt(j) == ')')
-                        cnt++;
-                }
-            }
-        }
+        for (int i = 0; i < len - 1; i++)
+            for (int j = i + 1; j < len; j++)
+                if (a.charAt(i) == '(' && a.charAt(j) == ')')
+                    cnt++;
+            
         System.out.print(cnt);
     }
 }
