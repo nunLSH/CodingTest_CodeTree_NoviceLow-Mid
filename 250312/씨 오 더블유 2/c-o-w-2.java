@@ -9,18 +9,13 @@ public class Main {
 
         int cnt = 0;
         for (int i = 0; i < len; i++){
-            if(s.charAt(i) == 'C'){
-                for (int j = i+1; j < len; j++){
-                    if(s.charAt(j) == 'O'){
-                        for (int k = j+1; k < len; k++){
-                            if(s.charAt(k) == 'W')
-                                cnt++;
-                        }
-                    }
+            for (int j = i+1; j < len; j++){
+                for (int k = j+1; k < len; k++){
+                    if(s.charAt(i) == 'C' && s.charAt(j) == 'O' && s.charAt(k) == 'W')
+                        cnt++;
                 }
             }
         }
         System.out.println(cnt);
-
     }
 }
