@@ -14,11 +14,11 @@ public class Main {
             sum += arr[i];
         }
 
-        int minDiff = arr[0] + arr[1];
+        int minDiff = Math.abs(sum - (arr[0] + arr[1]) - s);
         for (int i = 0; i < n; i++){
             for (int j = i + 1; j < n; j++){
-                int diff = s - (arr[i] + arr[j]);
-                minDiff = Math.abs(Math.min(minDiff, diff));
+                int diff = Math.abs(s - (sum - (arr[i] + arr[j])));
+                minDiff = Math.min(minDiff, diff);
             }
         }
         System.out.println(minDiff);
