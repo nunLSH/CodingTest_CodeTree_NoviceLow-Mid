@@ -21,8 +21,9 @@ public class Main {
                     newA = a.substring(0, i) + '1';
             }
 
-            int n = 0, cnt = 0;
+            int n = 0;
             for (int j = newA.length() - 1; j >= 0; j--){
+                int cnt = 0;
                 if (newA.charAt(j) == '1'){
                     cnt = 1;
                     if (j == newA.length() - 1)
@@ -35,7 +36,6 @@ public class Main {
                 n += cnt;
             }
             max = Math.max(n, max);
-            // System.out.println();
         }
         System.out.println(max);
     }
