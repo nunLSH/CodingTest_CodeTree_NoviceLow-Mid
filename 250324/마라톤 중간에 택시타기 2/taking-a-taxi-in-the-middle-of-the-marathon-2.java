@@ -14,7 +14,7 @@ public class Main {
         int minDis = Integer.MAX_VALUE;
         for (int i = 2; i < n; i++){               
             int sumDis = 0; 
-            int prevIndex = 0;
+            int prevIndex = 1;
             for (int j = 2; j <= n; j++) {
                 if (j == i) continue;
                 sumDis += Math.abs(x[prevIndex] - x[j]) + Math.abs(y[prevIndex] - y[j]);
