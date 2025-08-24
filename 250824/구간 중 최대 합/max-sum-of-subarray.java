@@ -1,7 +1,6 @@
 import java.util.*;
 public class Main {
     public static int n, k;
-    public static final int MAX = Integer.MIN_VALUE;
 
     public static void main(String[] args) {
         Scanner sc = new Scanner(System.in);
@@ -12,13 +11,11 @@ public class Main {
         for (int i = 0; i < n; i++)
             num[i] = sc.nextInt();
         
-        int max = MAX;
+        int max = 0;
         for (int i = 0; i <= n-k; i++){
-            int sum = 0, cnt = k;
-            while (cnt > 0){
-                sum += num[i+k-cnt];
-                cnt--;
-            }
+            int sum = 0;
+            for (int j = i; j < i+k; j++)
+                sum += num[j];
             max = Math.max(sum, max);
         }
         System.out.print(max);
