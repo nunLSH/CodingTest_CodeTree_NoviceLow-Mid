@@ -9,11 +9,9 @@ public class Main {
         k = sc.nextInt();
 
         char[] arr = new char[10001];
-        int maxNum = 0;
         for (int i = 0; i < n; i++){
             int num = sc.nextInt();
             char c = sc.next().charAt(0);
-            // maxNum = Math.max(num, maxNum);
 
             arr[num] = c;
         } 
