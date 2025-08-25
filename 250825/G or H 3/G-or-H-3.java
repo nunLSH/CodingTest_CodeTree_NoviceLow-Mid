@@ -8,7 +8,7 @@ public class Main {
         n = sc.nextInt();
         k = sc.nextInt();
 
-        char[] arr = new char[101];
+        char[] arr = new char[10001];
         int maxNum = 0;
         for (int i = 0; i < n; i++){
             int num = sc.nextInt();
