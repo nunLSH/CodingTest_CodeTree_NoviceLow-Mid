@@ -1,6 +1,7 @@
 import java.util.*;
 public class Main {
     public static int n, k;
+    public static final int MAX_NUM = 10000;
 
     public static void main(String[] args) {
         Scanner sc = new Scanner(System.in);
@@ -8,25 +9,25 @@ public class Main {
         n = sc.nextInt();
         k = sc.nextInt();
 
-        char[] arr = new char[10001];
+        char[] arr = new char[MAX_NUM+1];
         for (int i = 0; i < n; i++){
             int num = sc.nextInt();
             char c = sc.next().charAt(0);
 
-            arr[num] = c;
+            if (c == 'G')
+                arr[num] = 1;
+            else
+                arr[num] = 2;
         } 
 
-        int max = 0;
-        for (int i = 1; i <= 10000-k; i++){
+        int maxSum = 0;
+        for (int i = 1; i <= MAX_NUM-k; i++){
             int sum = 0;
             for (int j = i; j <= i+k; j++){
-                if (arr[j] == 'G')
-                    sum += 1;
-                else if (arr[j] == 'H')
-                    sum += 2;
+                sum += arr[j];
             }
-            max = Math.max(sum, max);
+            maxSum = Math.max(sum, maxSum);
         }   
-        System.out.print(max);
+        System.out.print(maxSum);
     }
 }
