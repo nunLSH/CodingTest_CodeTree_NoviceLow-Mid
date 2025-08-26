@@ -17,14 +17,14 @@ public class Main {
                 for (int j = k; j < k+i; j++){  // 구간
                     sum += num[j];
                 }
+
                 boolean isSame = false;
                 for (int t = k; t < k+i; t++){
-                    if (sum / i == (double) num[t]){
+                    if (sum / i == (double) num[t])
                         isSame = true;
-                        break;
-                    }
+                    
                 }
-                if (isSame == true)
+                if (isSame)
                     cnt++;
             }
         }
