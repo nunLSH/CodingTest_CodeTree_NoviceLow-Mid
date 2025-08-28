@@ -19,7 +19,8 @@ public class Main {
         for (int i = 0; i < 100; i++){ // 시작점
             int sumCnt = 0;
             for (int j = i; j <= i+2*k; j++){
-                sumCnt += candy[j];
+                if (j <= 100)
+                    sumCnt += candy[j];
             }
             maxCnt = Math.max(maxCnt, sumCnt);
         }
