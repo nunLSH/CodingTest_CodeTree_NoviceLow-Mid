@@ -19,22 +19,21 @@ public class Main {
         int sizeMax = 0;
         for (int i = 0; i < maxPos; i++){ // 크기
             for (int k = 1; k < maxPos+1 - i; k++){ // 시작점
-                int gCnt = 0, hCnt = 0;
+                int gCnt = 0, hCnt = 0, min = MAX, max = 0;
                 for (int j = k; j <= k + i; j++){ // 구간
 
-                    if (text[j] == 'G')
+                    if (text[j] == 'G') {
                         gCnt++;
-                    else if (text[j] == 'H')
+                        min = Math.min(min, j);
+                        max = Math.max(max, j);
+                    }
+                    else if (text[j] == 'H'){
                         hCnt++;
+                        min = Math.min(min, j);
+                        max = Math.max(max, j);
+                    }
                 }
                 if (gCnt == 0 && hCnt > 0 || hCnt == 0 && gCnt > 0 || gCnt == hCnt){
-                    int dis = 0, min = MAX, max = 0;
-                    for (int s = k; s < k+i; s++){
-                        if (text[s] == 'G' || text[s] == 'H') {
-                            min = Math.min(min, s);
-                            max = Math.max(max, s);
-                        }
-                    }
                     sizeMax = Math.max(max - min, sizeMax);
                 }
             }
