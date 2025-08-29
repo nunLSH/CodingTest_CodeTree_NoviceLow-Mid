@@ -10,16 +10,15 @@ public class Main {
         n = sc.nextInt();
         h = sc.nextInt();
         t = sc.nextInt();
-        for (int i = 0; i < n; i++){
+        for (int i = 0; i < n; i++)
             field[i] = sc.nextInt();
-        }
 
         int minCost = Integer.MAX_VALUE;
         for (int i = 0; i < n+1-t; i++){
             int cost = 0;
-                for (int k = i; k < i + t; k++){
+                for (int k = i; k < i + t; k++)
                     cost += Math.abs(h-field[k]);
-                }
+            
                 minCost = Math.min(minCost, cost);
         }
         System.out.print(minCost);
