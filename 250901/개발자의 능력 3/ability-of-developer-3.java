@@ -17,7 +17,7 @@ public class Main {
                 int team1 = 0, team2 = 0;
                 for (int k = j+1; k < 6; k++){
                     if (i != j && j !=k)
-                        team1 += score[k];
+                        team1 = score[i] + score[j] + score[k];
                 }
                 team2 = sum - team1;
                 int diff = Math.abs(team1 - team2);
