@@ -1,50 +1,45 @@
 import java.util.*;
+
 public class Main {
     public static void main(String[] args) {
         Scanner sc = new Scanner(System.in);
-
         int[] ability = new int[5];
-        int total = 0;
-        for (int i = 0; i < 5; i ++) {
+        for (int i = 0; i < 5; i++) {
             ability[i] = sc.nextInt();
             total += ability[i];
         }
 
-        int diffMin = 1000;
+        int diffMin = Integer.MAX_VALUE;
         boolean isPossible = false;
-        for (int i = 0; i < 5; i++){ // 1명
-            int sumMax = ability[i], sumMin = ability[i];
-            int sum1 = 0, sum2 = 0;
-            for (int j = 0; j < 5; j++){
-                for (int k = j+1; k < 5; k++){ // 2명
-                    if (i == j || i == k || j == k){
-                        continue;
-                    }
 
-                    sum1 = ability[j] + ability[k];
-                    sum2 = total - ability[i] - sum1;
+        // 1명
+        for (int i = 0; i < 5; i++) {
+            int groupA = ability[i];
 
-                    if (sum1 == sum2 || sum1 == ability[i] || sum2 == ability[i]){
-                        continue;
-                    }
+            // 나머지 4명 중 2명 선택
+            for (int j = 0; j < 5; j++) {
+                if (j == i) continue;
+                for (int k = j + 1; k < 5; k++) {
+                    if (k == i) continue;
 
+                    int groupB = ability[j] + ability[k];
+
+                    // 나머지 2명 
+                    int groupC = total - groupA - groupB;
+                
+                    int max = Math.max(groupA, Math.max(groupB, groupC));
+                    int min = Math.min(groupA, Math.min(groupB, groupC));
+
+                    diffMin = Math.min(diffMin, max - min);
                     isPossible = true;
-                    
-                    if (sum1 > sum2){
-                        sumMax = Math.max(sum1, sumMax);
-                        sumMin = Math.min(sumMin, sum2);
-                    } else {
-                        sumMax = Math.max(sum2, sumMax);
-                        sumMin = Math.min(sumMin, sum1);
-                    }
-                    diffMin = Math.min(sumMax - sumMin, diffMin);
                 }
             }
         }
 
-        if (isPossible == false)
-            System.out.print(-1);
-        else
-            System.out.print(diffMin);
+        if (!isPossible) {
+            System.out.println(-1);
+        } else {
+            System.out.println(diffMin);
+        }
     }
 }
