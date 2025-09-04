@@ -4,6 +4,8 @@ public class Main {
     public static void main(String[] args) {
         Scanner sc = new Scanner(System.in);
         int[] ability = new int[5];
+        int total = 0;
+        
         for (int i = 0; i < 5; i++) {
             ability[i] = sc.nextInt();
             total += ability[i];
