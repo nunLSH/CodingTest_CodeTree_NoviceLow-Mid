@@ -13,7 +13,7 @@ public class Main {
             dots[i][1] = sc.nextInt();
         }
 
-        int minExtent = MAX;
+        int minExtent = MAX * MAX;
         for (int i = 0; i < n; i++){
             int minX = MAX, maxX = MIN, minY = MAX, maxY = MIN;
             for (int j = 0; j < n; j++){
