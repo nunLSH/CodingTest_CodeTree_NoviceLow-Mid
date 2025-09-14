@@ -13,11 +13,14 @@ public class Main {
         int maxNum = -1;
         for (int i = 0; i < n; i++){
             for (int j = i+1; j < n; j++){
-                if (bombs[i] == bombs[j]){
-                    if (j-i <= k){
-                        maxNum = Math.max(maxNum, bombs[j]);
-                    }
-                }
+                
+                if (j-i > k)
+                    break;
+
+                if (bombs[i] != bombs[j])
+                    continue;
+
+                maxNum = Math.max(maxNum, bombs[j]);
             }
         }
         System.out.print(maxNum);
