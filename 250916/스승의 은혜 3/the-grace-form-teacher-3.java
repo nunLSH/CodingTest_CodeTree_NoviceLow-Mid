@@ -21,14 +21,13 @@ public class Main {
 
                 if (i == j)                
                     sum += p[i] / 2 + s[i];
-
-                sum += p[i] + s[i];
+                else 
+                    sum += p[i] + s[i];
 
                 if (sum > b)
                     maxCnt = Math.max(cnt, maxCnt);
-                
-                cnt++;
-
+                else 
+                    cnt++;
             }
         }
         System.out.print(maxCnt);
