@@ -4,33 +4,19 @@ public class Main {
 
     public static boolean isInterestingNum (int num){
         int[] rCnt = new int[10];
+        int allDigits = 0;
         while (num > 0){
-            int r = num % 10;
-            rCnt[r]++;
+            rCnt[num % 10]++;
+            allDigits++;
             num /= 10;
         }
-        Arrays.sort(rCnt);
 
-        return countRemains(rCnt);
-    }
-
-    public static boolean countRemains(int[] arr){
-        int len = 0;
-        int init = 9;
         for (int i = 0; i < 10; i++){
-            if (arr[i] > 0){
-                len++;
-                init = Math.min(i, init);
-            }
+            if (rCnt[i] == allDigits - 1)
+                return true;
         }
 
-        if (len != 2)
-            return false;
-        
-        if (arr[init] != 1)
-            return false;
-
-        return true;
+        return false;
     }
 
     public static void main(String[] args) {
